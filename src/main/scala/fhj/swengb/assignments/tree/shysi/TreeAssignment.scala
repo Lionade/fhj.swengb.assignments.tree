@@ -1,4 +1,4 @@
-package fhj.swengb.assignments.tree.rladstaetter
+package fhj.swengb.assignments.tree.shysi
 
 import javafx.scene.paint.Color
 
@@ -78,7 +78,7 @@ object MathUtil {
     * @return
     */
   def round(value: Double): Double = {
-    ???
+    BigDecimal(value).setScale(3, BigDecimal.RoundingMode.HALF_UP).toDouble
   }
 
   /**
@@ -88,7 +88,7 @@ object MathUtil {
     * @return
     */
   def toRadiants(angle: AngleInDegrees): AngleInRadiants = {
-   ???
+    (angle * math.Pi) / 180
   }
 }
 
