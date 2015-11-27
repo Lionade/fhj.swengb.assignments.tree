@@ -2,6 +2,8 @@ package fhj.swengb.assignments.tree.shysi
 
 import javafx.scene.paint.Color
 
+import sun.reflect.generics.tree.Tree
+
 import scala.math.BigDecimal.RoundingMode
 import scala.util.Random
 
@@ -40,7 +42,8 @@ object Graph {
     * @return
     */
   def traverse[A, B](tree: Tree[A])(convert: A => B): Seq[B] = {
-  ???
+    case Node(value) => Seq(convert(value))
+    case Branch(left, right) => traverse(left)(convert) ++ traverse(right)(convert)
   }
 
   /**
@@ -65,6 +68,7 @@ object Graph {
               colorMap: Map[Int, Color] = Graph.colorMap): Tree[L2D] = {
     assert(treeDepth <= colorMap.size, s"Treedepth higher than color mappings - bailing out ...")
     ???
+
  }
 
 }
